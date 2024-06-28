@@ -57,9 +57,5 @@ while job_status != "SUCCESS":
         time.sleep(60)  # Wait for 60 seconds before checking the status again
 
 fine_tuned_model_name = retrieved_job.fine_tuned_model  # This might not be the correct way to access the fine-tuned model
-chat_response = client.chat(
-    model=fine_tuned_model_name,
-    messages=[ChatMessage(role="assistant", content="Parlez-moi de vous."), ChatMessage(role='user', content="Je m'appelle Eva")]
-)
-print(chat_response)
+
                                    
