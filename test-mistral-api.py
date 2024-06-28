@@ -18,23 +18,21 @@ client = MistralClient(api_key=api_key)
 with open("interview_training_data.jsonl", "rb") as f:
     training_data = client.files.create(file=("interview_training_data.jsonl", f))"""
 
-with open("training_file.jsonl", "rb") as f:
-    training_data = client.files.create(file=("training_file.jsonl", f))
+with open("interview_training_data.jsonl", "rb") as f:
+    training_data = client.files.create(file=("interview_training_data", f))
 
-with open("validation_file.jsonl", "rb") as f:
-    validation_data = client.files.create(file=("validation_file.jsonl", f))
-                                        
+# with open("validation_file.jsonl", "rb") as f:
+#     validation_data = client.files.create(file=("validation_file.jsonl", f))
+                                 
 created_jobs = client.jobs.create(
     model="open-mistral-7b",
     training_files=[training_data.id],
-    validation_files=[validation_data.id],
+    # validation_files=[validation_data.id],
     hyperparameters=TrainingParameters(
         training_steps=10,
         learning_rate=0.0001,
         )
 )
-
-created_jobs
 
 
 job_id = created_jobs.id
@@ -49,8 +47,6 @@ else:
 retrieved_job = client.jobs.retrieve(created_jobs.id)
 print(retrieved_job)
 
-#client.jobs.cancel(created_jobs.id)
-
 job_id = created_jobs.id
 job_status = ""
 while job_status != "SUCCESS":
@@ -63,7 +59,7 @@ while job_status != "SUCCESS":
 fine_tuned_model_name = retrieved_job.fine_tuned_model  # This might not be the correct way to access the fine-tuned model
 chat_response = client.chat(
     model=fine_tuned_model_name,
-    messages=[ChatMessage(role='user', content="Je m'appelle Eva")]
+    messages=[ChatMessage(role="assistant", content="Parlez-moi de vous."), ChatMessage(role='user', content="Je m'appelle Eva")]
 )
 print(chat_response)
                                    

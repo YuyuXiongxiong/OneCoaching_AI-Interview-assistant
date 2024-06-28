@@ -8,8 +8,8 @@ excel_data_df = pd.read_excel('interview_training_data.xlsx')
 conversation_samples = []
 
 # Iterate over the rows of the DataFrame
-for index, row in excel_data_df.iterrows():
-    # Create a conversation sample for each row
+for index, row in excel_data_df.dropna().iterrows():
+    # Create a conversation sample for each row    
     conversation = {
         "messages": [
             {"role": "assistant", "content": row["Question"]},
@@ -17,14 +17,16 @@ for index, row in excel_data_df.iterrows():
             {"role": "assistant", "content": row["Feedback"]}
         ]
     }
+   
     # Append the conversation sample to the list
     conversation_samples.append(conversation)
 
-# Convert the list of conversation samples to a JSON string
-json_str = json.dumps(conversation_samples, ensure_ascii=False, indent=4)
+
 
 # Write the JSON string to a file
-with open('interview_training_data.json', 'w', encoding='utf-8') as json_file:
-    json_file.write(json_str)
+with open('interview_training_data.jsonl', 'w', encoding='utf-8') as outfile:
+    for entry in conversation_samples:
+        json.dump(entry, outfile)
+        outfile.write('\n')
 
-print('Data has been successfully converted and saved to interview_training_data.json')
+print('Data has been successfully converted and saved to interview_training_data.jsonl')
