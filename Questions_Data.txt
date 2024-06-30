@@ -1,0 +1,30 @@
+Quelle est votre expérience avec l'analyse de données ?
+Pouvez-vous expliquer la différence entre machine learning supervisé et non supervisé ?
+Comment gérez-vous les données manquantes dans un dataset ?
+Quelle est votre expérience avec les bases de données SQL ?
+Pouvez-vous expliquer le concept de surapprentissage (overfitting) ?
+Comment évaluez-vous la performance d'un modèle de machine learning ?
+Quelle est votre expérience avec les outils de visualisation de données ?
+Pouvez-vous donner un exemple de projet de data science que vous avez réalisé ?
+Comment gérez-vous les grands volumes de données ?
+Quelle est votre approche pour nettoyer les données ?
+Pouvez-vous expliquer le concept de régression linéaire ?
+Quelle est votre expérience avec Python pour l'analyse de données ?
+Comment gérez-vous la confidentialité et la sécurité des données ?
+Pouvez-vous expliquer le concept de clustering ?
+Quelle est votre expérience avec les algorithmes de recommandation ?
+Comment évaluez-vous la qualité des données ?
+Pouvez-vous expliquer le concept de validation croisée (cross-validation) ?
+Quelle est votre expérience avec les outils de Big Data comme Hadoop ou Spark ?
+Comment communiquez-vous les résultats de votre analyse à des non-experts ?
+Pouvez-vous donner un exemple de comment vous avez utilisé des données pour prendre une décision stratégique ?
+Comment vous assurez-vous de bien comprendre les besoins du client ?
+Pouvez-vous décrire une situation où vous avez dû faire preuve de leadership ?
+Comment gérez-vous les conflits au sein d'une équipe ?
+Quelle est votre expérience avec la gestion de projet agile ?
+Comment gérez-vous les priorités multiples et les délais serrés ?
+Pouvez-vous donner un exemple de comment vous avez utilisé les données pour améliorer un processus ?
+Comment restez-vous informé des nouvelles technologies dans votre domaine ?
+Pouvez-vous expliquer comment vous abordez la résolution de problèmes ?
+Quelle est votre expérience avec le travail en équipe ?
+Comment gérez-vous les situations où vous devez apprendre rapidement une nouvelle compétence ?

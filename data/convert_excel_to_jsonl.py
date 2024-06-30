@@ -2,13 +2,14 @@ import pandas as pd
 import json
 
 # Read the Excel file into a DataFrame
-excel_data_df = pd.read_excel('interview_training_data.xlsx')
+excel_data_df = pd.read_excel('interview-dataset.xlsx')
 
 # Initialize an empty list to store each conversation sample
 conversation_samples = []
 
 # Iterate over the rows of the DataFrame
-for index, row in excel_data_df.dropna().iterrows():
+#for index, row in excel_data_df.dropna().iterrows():
+for index, row in excel_data_df.iterrows():
     # Create a conversation sample for each row    
     conversation = {
         "messages": [

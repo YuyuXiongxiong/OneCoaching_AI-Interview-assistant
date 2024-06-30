@@ -14,18 +14,12 @@ os.environ["MISTRAL_API_KEY"] = "8BXU9qP4ba24JS0OY7vS1kdRpRWFNvfT"
 api_key = os.environ["MISTRAL_API_KEY"]
 client = MistralClient(api_key=api_key)
 
-"""
-with open("interview_training_data.jsonl", "rb") as f:
-    training_data = client.files.create(file=("interview_training_data.jsonl", f))"""
-
-with open("interview_training_data.jsonl", "rb") as f:
+with open("./data/interview_training_data.jsonl", "rb") as f:
     training_data = client.files.create(file=("interview_training_data", f))
 
-# with open("validation_file.jsonl", "rb") as f:
-#     validation_data = client.files.create(file=("validation_file.jsonl", f))
-                                 
+                   
 created_jobs = client.jobs.create(
-    model="open-mistral-7b",
+    model="mistral-small-latest",
     training_files=[training_data.id],
     # validation_files=[validation_data.id],
     hyperparameters=TrainingParameters(
@@ -57,5 +51,3 @@ while job_status != "SUCCESS":
         time.sleep(60)  # Wait for 60 seconds before checking the status again
 
 fine_tuned_model_name = retrieved_job.fine_tuned_model  # This might not be the correct way to access the fine-tuned model
-
-                                   
